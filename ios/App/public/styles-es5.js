@@ -526,11 +526,19 @@
     /***/
     function _(module, exports, __webpack_require__) {
       __webpack_require__(
+<<<<<<< HEAD
       /*! /Users/michelleponti/Documents/GitHub/DevMob-spotless/src/theme/variables.scss */
       "./src/theme/variables.scss");
 
       module.exports = __webpack_require__(
       /*! /Users/michelleponti/Documents/GitHub/DevMob-spotless/src/global.scss */
+=======
+      /*! /Users/mika/Documents/PRO/HEIG/3eme/DevMobil/DevMob-spotless/src/theme/variables.scss */
+      "./src/theme/variables.scss");
+
+      module.exports = __webpack_require__(
+      /*! /Users/mika/Documents/PRO/HEIG/3eme/DevMobil/DevMob-spotless/src/global.scss */
+>>>>>>> 51be0587ff069ea5022aac4a3bbcd4d22b418a81
       "./src/global.scss");
       /***/
     }

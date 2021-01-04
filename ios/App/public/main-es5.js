@@ -507,7 +507,11 @@
     /***/
     function _(module, exports, __webpack_require__) {
       module.exports = __webpack_require__(
+<<<<<<< HEAD
       /*! /Users/michelleponti/Documents/GitHub/DevMob-spotless/src/main.ts */
+=======
+      /*! /Users/mika/Documents/PRO/HEIG/3eme/DevMobil/DevMob-spotless/src/main.ts */
+>>>>>>> 51be0587ff069ea5022aac4a3bbcd4d22b418a81
       "./src/main.ts");
       /***/
     }

@@ -6145,8 +6145,13 @@ window.__Zone_disable_customElements = true;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! /Users/michelleponti/Documents/GitHub/DevMob-spotless/src/polyfills.ts */"./src/polyfills.ts");
 module.exports = __webpack_require__(/*! /Users/michelleponti/Documents/GitHub/DevMob-spotless/node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/jit-polyfills.js */"./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/jit-polyfills.js");
+=======
+__webpack_require__(/*! /Users/mika/Documents/PRO/HEIG/3eme/DevMobil/DevMob-spotless/src/polyfills.ts */"./src/polyfills.ts");
+module.exports = __webpack_require__(/*! /Users/mika/Documents/PRO/HEIG/3eme/DevMobil/DevMob-spotless/node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/jit-polyfills.js */"./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/jit-polyfills.js");
+>>>>>>> 51be0587ff069ea5022aac4a3bbcd4d22b418a81
 
 
 /***/ })

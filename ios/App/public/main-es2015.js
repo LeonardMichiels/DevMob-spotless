@@ -484,7 +484,11 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! /Users/michelleponti/Documents/GitHub/DevMob-spotless/src/main.ts */"./src/main.ts");
+=======
+module.exports = __webpack_require__(/*! /Users/mika/Documents/PRO/HEIG/3eme/DevMobil/DevMob-spotless/src/main.ts */"./src/main.ts");
+>>>>>>> 51be0587ff069ea5022aac4a3bbcd4d22b418a81
 
 
 /***/ })

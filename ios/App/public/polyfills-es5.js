@@ -20302,7 +20302,11 @@
     /***/
     function _(module, exports, __webpack_require__) {
       __webpack_require__(
+<<<<<<< HEAD
       /*! /Users/michelleponti/Documents/GitHub/DevMob-spotless/node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/es5-polyfills.js */
+=======
+      /*! /Users/mika/Documents/PRO/HEIG/3eme/DevMobil/DevMob-spotless/node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/es5-polyfills.js */
+>>>>>>> 51be0587ff069ea5022aac4a3bbcd4d22b418a81
       "./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/es5-polyfills.js");
 
       __webpack_require__(
@@ -20310,6 +20314,7 @@
       "./node_modules/zone.js/dist/zone-legacy.js");
 
       __webpack_require__(
+<<<<<<< HEAD
       /*! /Users/michelleponti/Documents/GitHub/DevMob-spotless/node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/jit-polyfills.js */
       "./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/jit-polyfills.js");
 
@@ -20319,6 +20324,17 @@
 
       module.exports = __webpack_require__(
       /*! /Users/michelleponti/Documents/GitHub/DevMob-spotless/src/polyfills.ts */
+=======
+      /*! /Users/mika/Documents/PRO/HEIG/3eme/DevMobil/DevMob-spotless/node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/jit-polyfills.js */
+      "./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/jit-polyfills.js");
+
+      __webpack_require__(
+      /*! /Users/mika/Documents/PRO/HEIG/3eme/DevMobil/DevMob-spotless/node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/es5-jit-polyfills.js */
+      "./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/es5-jit-polyfills.js");
+
+      module.exports = __webpack_require__(
+      /*! /Users/mika/Documents/PRO/HEIG/3eme/DevMobil/DevMob-spotless/src/polyfills.ts */
+>>>>>>> 51be0587ff069ea5022aac4a3bbcd4d22b418a81
       "./src/polyfills.ts");
       /***/
     }
