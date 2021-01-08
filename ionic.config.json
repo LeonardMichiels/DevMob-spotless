@@ -1,5 +1,5 @@
 {
-  "name": "spotless",
+  "name": "SpotlessApp",
   "integrations": {
     "capacitor": {}
   },
