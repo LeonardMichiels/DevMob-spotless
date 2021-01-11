@@ -15,22 +15,22 @@ export class AppComponent implements OnInit {
     {
       title: 'Maps',
       url: '/folder/Maps',
-      icon: 'mail'
+      icon: 'map'
     },
     {
       title: 'List',
       url: '/folder/List',
-      icon: 'paper-plane'
+      icon: 'trophy'
     },
     {
       title: 'Mon Compte',
       url: '/folder/Compte',
-      icon: 'heart'
+      icon: 'person-circle'
     },
     {
       title: 'Reglages',
       url: '/folder/Reglages',
-      icon: 'heart'
+      icon: 'settings'
     }
   ];
   public labels = [];
