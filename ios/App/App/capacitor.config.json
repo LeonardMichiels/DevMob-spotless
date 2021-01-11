@@ -1,5 +1,5 @@
 {
-  "appId": "ch.heig-vd.spotless",
+  "appId": "ch.heigvd.spotless",
   "appName": "SpotlessApp",
   "bundledWebRuntime": false,
   "npmClient": "npm",
