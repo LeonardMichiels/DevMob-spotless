@@ -3,7 +3,49 @@
     <ion-title>Liste</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<ion-searchbar animated autocomplete="on"></ion-searchbar>
 <ion-content>
-  ciao liste
+  <ion-card href="#linkTitle" class="ion-activated">
+
+    <ion-card-header>
+      <ion-card-title>LOL</ion-card-title>
+      <ion-card-subtitle>Rates:2</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+     Description
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card href="#linkTitle" class="ion-activated">
+
+    <ion-card-header>
+      <ion-card-title>Title</ion-card-title>
+      <ion-card-subtitle>Rates:2</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+     Description
+    </ion-card-content>
+
+  </ion-card>
+
 </ion-content>
+
+<script>
+  const searchbar = document.querySelector('ion-searchbar');
+  const items = Array.from(document.querySelector('ion-card>ion-card-header>ion.card-title'));
+
+  searchbar.addEventListener('ionInput', handleInput);
+
+  function handleInput(event) {
+    const query = event.target.value.toLowerCase();
+    requestAnimationFrame(() => {
+      items.forEach(item => {
+        const shouldShow = item.textContent.toLowerCase().indexOf(query) > -1;
+        item.style.display = shouldShow ? 'block' : 'none';
+      });
+    });
+  }
+</script>
