@@ -1,0 +1,13 @@
+{
+  "appId": "ch.heigvd.spotless",
+  "appName": "Spotless",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}
