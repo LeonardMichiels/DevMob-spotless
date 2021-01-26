@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
     },
     {
       title: 'Mon Compte',
-      url: '/folder/Compte',
+      url: '/folder/compte',
       icon: 'person-circle'
     },
     {
