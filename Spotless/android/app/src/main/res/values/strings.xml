@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Spotless</string>
+    <string name="title_activity_main">Spotless</string>
+    <string name="package_name">ch.heigvd.spotless</string>
+    <string name="custom_url_scheme">ch.heigvd.spotless</string>
+</resources>
