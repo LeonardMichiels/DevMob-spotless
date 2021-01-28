@@ -1,7 +1,5 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable, ReplaySubject } from "rxjs";
-import { map } from "rxjs/operators";
 
 import { AuthResponse } from "../models/auth-response";
 import { User } from "../models/user";
@@ -50,7 +48,7 @@ export class AuthService {
       delayWhen(auth => this.saveAuth(auth)),
       map(auth => {
         this.authSource.next(auth);
-        console.log(`User ${auth.user.name} logged in`);
+        console.log(`User ${auth.user.username} logged in`);
         return auth.user;
       })
     );
