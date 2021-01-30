@@ -1,0 +1,7 @@
+{
+  "name": "Spotless",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
