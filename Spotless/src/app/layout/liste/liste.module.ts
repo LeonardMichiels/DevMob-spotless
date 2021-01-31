@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ListePageRoutingModule } from './liste-routing.module';
 
 import { ListePage } from './liste.page';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ListePageRoutingModule
+    ListePageRoutingModule,
+    HttpClientModule
   ],
   declarations: [ListePage]
 })
