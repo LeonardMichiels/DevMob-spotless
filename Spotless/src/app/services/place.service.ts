@@ -14,15 +14,16 @@ const API_URL = 'http://spotlessapp.herokuapp.com/places';
 export class PlaceService {
 
   constructor(private http: HttpClient) { }
-
   getPlace(): Observable<Place> {
     //const options = { observe: 'response' };
     return this.http.get<PlaceResponse>(API_URL)
     .pipe(map(convertPlaceResponseToPlace));
+    console.log("ici");
   }
 }
 
 function convertPlaceResponseToPlace(response: PlaceResponse): Place {
+  console.log("ici2");
   return {
     _id: response.value._id,
     postedBy: response.value.postedBy,

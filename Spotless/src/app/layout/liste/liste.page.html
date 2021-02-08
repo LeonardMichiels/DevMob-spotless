@@ -1,22 +1,18 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>Liste</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-searchbar animated autocomplete="on"></ion-searchbar>
+<ion-searchbar animated autocomplete="on" ></ion-searchbar>
 <ion-content>
-  <p>
-    <button type='button' (click)='addPlace()'>Add Place</button>
-  </p>
   
 
-  <ion-card href="#" class="ion-activated">
-
+  <ion-card  class="ion-activated" *ngFor='let place of places' href="/detail/place._id">
     <ion-card-header>
-      <ion-card-title *ngFor='let place of places'>{{ place.title }}</ion-card-title>
-      <ion-card-subtitle *ngFor='let place of places'>Rates: {{ place.rates }}</ion-card-subtitle>
+      <ion-card-title >{{ place.title }}</ion-card-title>
+      <ion-card-subtitle >Rates: {{ place.rates }}</ion-card-subtitle>
     </ion-card-header>
-    <ion-card-content *ngFor='let place of places'>
+    <ion-card-content>
       {{ place.description }}
     </ion-card-content>
   </ion-card>
@@ -24,9 +20,9 @@
 
 </ion-content>
 
-<!-- <script>
+<script>
   const searchbar = document.querySelector('ion-searchbar');
-  const items = Array.from(document.querySelector('ion-card>ion-card-header>ion.card-title'));
+  const items = Array.from(document.querySelector('ion-card>ion-card-hearder>ion-card-title'));
 
   searchbar.addEventListener('ionInput', handleInput);
 
@@ -39,4 +35,4 @@
       });
     });
   }
-</script> -->
+</script>
