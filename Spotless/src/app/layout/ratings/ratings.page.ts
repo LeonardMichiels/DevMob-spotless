@@ -34,16 +34,6 @@ export class RatingPage implements ViewDidEnter {
     this.place_id = this.route.snapshot.paramMap.get("place-id");
   }
 
-  // ionViewDidEnter(): void {
-  //   // Make an HTTP request to retrieve the places.
-  //   const url = "http://spotlessapp.herokuapp.com/places";
-  //   this.http.get(url).subscribe((places) => {
-  //     console.log(`Places loaded`, places);
-    
-  //   });
-
-  // }
-
 
   ionViewDidEnter(): void {
     // Make an HTTP request to retrieve the places.
@@ -64,4 +54,9 @@ export class RatingPage implements ViewDidEnter {
   //   });
   // }
   // ...
+
+
+  showModal(){
+console.log("hello modal");
+  }
 }
