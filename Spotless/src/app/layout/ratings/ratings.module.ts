@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ListePageRoutingModule } from './liste-routing.module';
+import { RatingsPageRoutingModule } from './ratings-routing.module';
 
-import { ListePage } from './liste.page';
+import { RatingPage } from './ratings.page';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     FormsModule,
     IonicModule,
-    ListePageRoutingModule,
+    RatingsPageRoutingModule,
     HttpClientModule
   ],
-  declarations: [ListePage]
+  declarations: [RatingPage]
 })
-export class ListePageModule {}
+export class RatingsPageModule {}
