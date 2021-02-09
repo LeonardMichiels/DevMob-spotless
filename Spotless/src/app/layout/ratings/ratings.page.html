@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content>
-  <h2>nom</h2>
+  <h2>{{ rating.addDate }}</h2>
 
   <ion-card  class="ion-activated" *ngFor='let rating of ratings'>
     <ion-card-header>
@@ -16,7 +16,7 @@
       <ion-card-subtitle >{{ rating.addDate }}</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
-      <ion-gride>
+      <ion-grid>
   <ion-row>
 <ion-col>{{ rating.image }}</ion-col>
 <ion-col>{{ rating.comment }}</ion-col>
@@ -65,7 +65,7 @@
     </svg>
     {{ rating.control }}</ion-col>
   </ion-row>
-      </ion-gride>
+      </ion-grid>
       {{ ratings.comment }}
     </ion-card-content>
   </ion-card>

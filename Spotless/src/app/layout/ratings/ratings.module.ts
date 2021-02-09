@@ -6,15 +6,17 @@ import { IonicModule } from '@ionic/angular';
 
 import { RatingsPageRoutingModule } from './ratings-routing.module';
 
-import { RatingsPage } from './ratings.page';
+import { RatingPage } from './ratings.page';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RatingsPageRoutingModule
+    RatingsPageRoutingModule,
+    HttpClientModule
   ],
-  declarations: [RatingsPage]
+  declarations: [RatingPage]
 })
 export class RatingsPageModule {}

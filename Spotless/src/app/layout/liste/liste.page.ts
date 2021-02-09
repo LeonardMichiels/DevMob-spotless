@@ -40,7 +40,7 @@ export class ListePage implements ViewDidEnter {
   ionViewDidEnter(): void {
     // Make an HTTP request to retrieve the places.
     const url = "http://spotlessapp.herokuapp.com/places";
-    this.http.get(url).subscribe(result => {
+    this.http.get<Place[]>(url).subscribe(result => {
       this.places=result;
       console.log(`Places loaded`, result);
     
@@ -48,12 +48,10 @@ export class ListePage implements ViewDidEnter {
 
   }
 
-  // addPlace() {
-  //   this.placeService.getPlace().subscribe(place => {
-  //     this.places.push(place);
-  //   }, err => {
-  //     console.warn('Could not get new place', err);
-  //   });
-  // }
-  // ...
+  searchPlace(searchValue: CustomEvent){
+    console.log(searchValue.detail.value);//filtrage js sur tableau des places, on peut filtrer les noms. pouvoir annuler la recherche
+    //ionCancel, ShowCancelButton
+
+  }
+ 
 }
