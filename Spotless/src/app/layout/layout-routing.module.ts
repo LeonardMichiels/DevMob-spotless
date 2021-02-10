@@ -20,9 +20,15 @@ const routes: Routes = [
       {
         path: 'compte',
         loadChildren: () => import('./compte/compte.module').then(m => m.ComptePageModule)
+      },
+      {
+        path: 'ratings',
+        loadChildren: () => import('./ratings/ratings.module').then( m => m.RatingsPageModule)
       }
+   
     ]
-  }
+  },
+
 ];
 
 @NgModule({

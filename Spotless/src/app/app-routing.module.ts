@@ -19,6 +19,18 @@ const routes: Routes = [
     path: 'register',
     loadChildren: () => import('./auth/register/register.module').then( m => m.RegisterPageModule)
   },
+  {
+    path: 'splash',
+    loadChildren: () => import('./auth/splash/splash.module').then( m => m.SplashPageModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./auth/home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'forgot-password',
+    loadChildren: () => import('./auth/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+  },
 ];
 
 @NgModule({

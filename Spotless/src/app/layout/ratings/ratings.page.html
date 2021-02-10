@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-button href="/liste">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-button>
+    <ion-title>Avis</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2>{{ rating.addDate }}</h2>
+
+  <ion-card  class="ion-activated" *ngFor='let rating of ratings'>
+    <ion-card-header>
+      <ion-card-title >{{ rating.author.username }}</ion-card-title>
+      <ion-card-subtitle >{{ rating.addDate }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+  <ion-row>
+<ion-col>{{ rating.image }}</ion-col>
+<ion-col>{{ rating.comment }}</ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col> <svg id="Raggruppa_8" data-name="Raggruppa 8" xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16">
+      <g id="Raggruppa_7" data-name="Raggruppa 7">
+        <path id="Tracciato_644" data-name="Tracciato 644" d="M128.047,10.3h.006c.205-3.565,1.032-4.059,1.988-4.631.1-.057.194-.116.294-.18V4.667h0A.333.333,0,0,1,130,4.333v-2A2.336,2.336,0,0,1,132.334,0H136a.667.667,0,0,1,.667.667h.667a.667.667,0,0,1,.667.667V2a.667.667,0,0,1-.667.667h-.667a.667.667,0,0,1-.667.667h-.377l.988,1.482a.334.334,0,0,1-.277.518h-.667a.332.332,0,0,1-.2-.067l-2.133-1.6v.667a.333.333,0,0,1-.333.333v.825l.026.018c1.023.7,1.99,1.359,2.239,4.782h.008c.041.638.061,4.376.061,4.376A1.335,1.335,0,0,1,134,16h-4.667A1.335,1.335,0,0,1,128,14.667S128.016,10.9,128.047,10.3ZM134,13.333s-.017-2.143-.044-2.667h-4.588c-.021.5-.034,2.667-.034,2.667Z" transform="translate(-128.001)" fill="#2699fb"/>
+        <path id="Tracciato_645" data-name="Tracciato 645" d="M64,43a.333.333,0,0,1,.333-.333H65a.333.333,0,0,1,0,.667h-.667A.333.333,0,0,1,64,43Z" transform="translate(-53.333 -41.333)" fill="#2699fb"/>
+        <path id="Tracciato_646" data-name="Tracciato 646" d="M75.816.643,75.15.977a.333.333,0,0,1-.3-.6l.666-.333a.333.333,0,1,1,.3.6Z" transform="translate(-64.333 -0.012)" fill="#2699fb"/>
+        <path id="Tracciato_647" data-name="Tracciato 647" d="M75.15,74.712l.667.333a.333.333,0,0,1-.3.6l-.667-.333a.333.333,0,1,1,.3-.6Z" transform="translate(-64.334 -72.343)" fill="#2699fb"/>
+      </g>
+    </svg>
+    {{ rating.disinfectant }}</ion-col>
+    <ion-col><svg xmlns="http://www.w3.org/2000/svg" width="20.002" height="13.44" viewBox="0 0 20.002 13.44">
+  <path id="mask" d="M19.374,98.1a1.2,1.2,0,0,0-1.235.032l-.987.617c-.989-.359-1.985-.758-2.963-1.19-.806-.356-1.394-.642-1.867-.872a4.553,4.553,0,0,0-2.33-.717,4.069,4.069,0,0,0-2.027.678c-.452.242-1.014.543-1.843.911a26.07,26.07,0,0,1-3.265,1.2l-1-.623A1.2,1.2,0,0,0,.626,98.1,1.2,1.2,0,0,0,0,99.164v3.681a1.21,1.21,0,0,0,.572,1.032L2.5,105.082v.322a1.557,1.557,0,0,0,.56,1.2,11.962,11.962,0,0,0,6.941,2.8,10.534,10.534,0,0,0,6.977-2.819,1.564,1.564,0,0,0,.524-1.167v-.216L19.429,104A1.21,1.21,0,0,0,20,102.969v-3.8A1.2,1.2,0,0,0,19.374,98.1Zm-14.58,5.7a15.21,15.21,0,0,0,10.412,0l.214.587a15.835,15.835,0,0,1-10.84,0Zm-.214-2.226.214-.587a15.21,15.21,0,0,0,10.412,0l.214.587a15.835,15.835,0,0,1-10.84,0ZM.9,103.347a.589.589,0,0,1-.278-.5V99.164a.592.592,0,0,1,.906-.5l.969.606v5.077Zm18.474-.379a.589.589,0,0,1-.278.5l-1.6,1v-5.2l.969-.606a.592.592,0,0,1,.906.5Z" transform="translate(0.001 -95.968)" fill="#2699fb"/>
+</svg>
+{{ rating.mask }}</ion-col>
+    <ion-col><svg xmlns="http://www.w3.org/2000/svg" width="18.437" height="15.557" viewBox="0 0 18.437 15.557">
+      <g id="Raggruppa_15" data-name="Raggruppa 15" transform="translate(-184 -768.444)">
+        <path id="Tracciato_659" data-name="Tracciato 659" d="M7.174,175.668a3.46,3.46,0,0,0-1.686-2.58,2.588,2.588,0,0,0,.849-1.917v-.576a2.593,2.593,0,0,0-5.185,0v.576a2.587,2.587,0,0,0,.841,1.91,3.458,3.458,0,0,0-1.7,2.611L0,178.309a.576.576,0,0,0,.573.64H6.914a.576.576,0,0,0,.572-.644Z" transform="translate(184 605.051)" fill="#2699fb"/>
+        <path id="Tracciato_660" data-name="Tracciato 660" d="M311.486,178.305l-.311-2.637a3.46,3.46,0,0,0-1.686-2.58,2.588,2.588,0,0,0,.849-1.917v-.576a2.593,2.593,0,0,0-5.185,0v.576a2.587,2.587,0,0,0,.841,1.91,3.458,3.458,0,0,0-1.7,2.611L304,178.309a.576.576,0,0,0,.573.64h6.338A.576.576,0,0,0,311.486,178.305Z" transform="translate(-109.053 605.051)" fill="#2699fb"/>
+        <path id="Tracciato_661" data-name="Tracciato 661" d="M96.08,41.437a.572.572,0,0,0,0,.585,12.831,12.831,0,0,0,1.24,1.267.576.576,0,0,0,.815-.815l-.169-.169h7.589l-.169.169a.576.576,0,1,0,.815.815,11.923,11.923,0,0,0,1.239-1.265.575.575,0,0,0-.034-.64c-.039-.052.077.068-1.205-1.215a.576.576,0,1,0-.815.815l.169.169H97.966l.169-.169a.576.576,0,0,0-.815-.815A12.676,12.676,0,0,0,96.08,41.437Z" transform="translate(91.458 728.443)" fill="#2699fb"/>
+      </g>
+    </svg>
+    {{ rating.distancing }}</ion-col>
+    <ion-col><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+      <g id="Raggruppa_16" data-name="Raggruppa 16" transform="translate(-245 -768)">
+        <path id="Tracciato_648" data-name="Tracciato 648" d="M64.281,0H61.469a.469.469,0,1,0,0,.937h2.812a.469.469,0,1,0,0-.937Z" transform="translate(185.906 768)" fill="#2699fb"/>
+        <path id="Tracciato_649" data-name="Tracciato 649" d="M0,60.469a.468.468,0,0,0,.469.469H3.312a.469.469,0,1,0,0-.937H.469A.468.468,0,0,0,0,60.469Z" transform="translate(245 709.875)" fill="#2699fb"/>
+        <path id="Tracciato_650" data-name="Tracciato 650" d="M424.344.937h-.469V.469a.469.469,0,0,0-.937,0V.937h-.469a.469.469,0,0,0,0,.937h.469v.469a.469.469,0,0,0,.938,0V1.875h.469a.469.469,0,1,0,0-.937Z" transform="translate(-163.813 768)" fill="#2699fb"/>
+        <path id="Tracciato_651" data-name="Tracciato 651" d="M332.875,423.875h.469a.469.469,0,0,0,0-.937h-.469v-.469a.469.469,0,0,0-.937,0v.469h-.469a.469.469,0,0,0,0,.938h.469v.469a.469.469,0,1,0,.937,0Z" transform="translate(-75.656 359.188)" fill="#2699fb"/>
+        <path id="Tracciato_652" data-name="Tracciato 652" d="M12.78,101.415a.741.741,0,0,0,0-1.026.7.7,0,0,0-.994,0l-1.823,1.823a.469.469,0,0,1-.663-.663l2.486-2.486a.7.7,0,1,0-.994-.994l-2.486,2.486a.469.469,0,1,1-.663-.663l3.149-3.149a.7.7,0,0,0-.994-.994L6.648,98.9a.469.469,0,0,1-.663-.663l2.486-2.486a.7.7,0,0,0-.994-.994L2.752,99.476l-.17-2.92a.938.938,0,0,0-1.873.026c-.422,5.328-1.636,7.394.606,9.635a4.716,4.716,0,0,0,6.629.031Z" transform="translate(245 676.406)" fill="#2699fb"/>
+        <path id="Tracciato_653" data-name="Tracciato 653" d="M150.665,32.087a3.317,3.317,0,0,0,0-4.672l-3.977-3.977a3.391,3.391,0,0,0-4.64.031l-1.357,1.357a2.332,2.332,0,0,0-.659,1.926l2.423-2.423a1.642,1.642,0,0,1,2.734.693,1.642,1.642,0,0,1,2.208,2.209,1.625,1.625,0,0,1,.693.414,1.643,1.643,0,0,1,.3,1.906,1.642,1.642,0,0,1,.694,2.734l-1.809,1.809a2.337,2.337,0,0,0,2.034-.649Z" transform="translate(109.36 746.168)" fill="#2699fb"/>
+      </g>
+    </svg>
+    {{ rating.cleaning }}</ion-col>
+    <ion-col><svg xmlns="http://www.w3.org/2000/svg" width="15.998" height="16" viewBox="0 0 15.998 16">
+      <g id="Raggruppa_17" data-name="Raggruppa 17" transform="translate(-296 -768)">
+        <path id="Tracciato_654" data-name="Tracciato 654" d="M.025,285H1.907v.941H.025Z" transform="translate(295.975 491.941)" fill="#2699fb"/>
+        <path id="Tracciato_655" data-name="Tracciato 655" d="M0,0H1.7V.941H0Z" transform="matrix(0.832, -0.555, 0.555, 0.832, 296.213, 779.843)" fill="#2699fb"/>
+        <path id="Tracciato_656" data-name="Tracciato 656" d="M180.025,450h6.812v1.882h-6.812Z" transform="translate(121.622 332.118)" fill="#2699fb"/>
+        <path id="Tracciato_657" data-name="Tracciato 657" d="M54.269,6.289A4.24,4.24,0,0,1,54.6,0H46.216V.471a2.827,2.827,0,0,0,1.735,2.564,4.181,4.181,0,0,0-.488,2.006L46,7.293l1.429.682v.88l1.852.378a.566.566,0,0,1-.113,1.12H47.429v.471a2.356,2.356,0,0,0,2.353,2.353h7.234V10.5L58.9,7.672V7.2a4.25,4.25,0,0,1-4.63-.914Z" transform="translate(251.442 768)" fill="#2699fb"/>
+        <path id="Tracciato_658" data-name="Tracciato 658" d="M305.7,1.013a3.294,3.294,0,1,0,0,4.659A3.3,3.3,0,0,0,305.7,1.013Zm-3.993.666a2.357,2.357,0,0,1,2.961-.3L301.4,4.64a2.357,2.357,0,0,1,.3-2.961Zm3.328,3.328a2.357,2.357,0,0,1-2.961.3l3.261-3.261A2.357,2.357,0,0,1,305.03,5.006Z" transform="translate(5.339 767.952)" fill="#2699fb"/>
+      </g>
+    </svg>
+    {{ rating.control }}</ion-col>
+  </ion-row>
+      </ion-grid>
+      {{ ratings.comment }}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab horizontal="center" vertical="bottom" slot="fixed">
+<ion-fab-button color="primary" href="">
+<ion-icon name="add"></ion-icon>
+</ion-fab-button>
+  </ion-fab>
+
+</ion-content>
