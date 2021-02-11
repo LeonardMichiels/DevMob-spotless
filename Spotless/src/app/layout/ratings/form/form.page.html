@@ -1,0 +1,63 @@
+<ion-header translucent>
+  <ion-toolbar color="primary">
+    <ion-title>Ajouter une évaluation</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+
+<h1>TITRE PLACE</h1>
+  <ion-list>
+    <h2>Mask</h2>
+    <ion-item> 
+      <ion-range min="1" max="5" step="1" value="2" snaps color="primary">
+        <ion-icon slot="start" size="small" color="danger" name="thermometer"></ion-icon>
+        <ion-icon slot="end" color="danger" name="thermometer"></ion-icon>
+      </ion-range>
+    </ion-item>
+
+    <h2>Desinfection</h2>
+    <ion-item> 
+      <ion-range min="1" max="5" step="1" value="2" snaps color="primary">
+        <ion-icon slot="start" size="small" color="primary" name="thermometer"></ion-icon>
+        <ion-icon slot="end" color="danger" name="thermometer"></ion-icon>
+      </ion-range>
+    </ion-item>
+
+    <h2>Distances</h2>
+    <ion-item> 
+      <ion-range min="1" max="5" step="1" value="2" snaps color="primary">
+        <ion-icon slot="start" size="small" color="primary" name="thermometer"></ion-icon>
+        <ion-icon slot="end" color="danger" name="thermometer"></ion-icon>
+      </ion-range>
+    </ion-item>
+
+
+    <h2>Nettoyage</h2>
+    <ion-item> 
+      <ion-range min="1" max="5" step="1" value="2" snaps color="primary">
+        <ion-icon slot="start" size="small" color="primary" name="thermometer"></ion-icon>
+        <ion-icon slot="end" color="danger" name="thermometer"></ion-icon>
+      </ion-range>
+    </ion-item>
+
+
+    <h2>controle</h2>
+    <ion-item> 
+      <ion-range min="1" max="5" step="1" value="2" snaps color="primary">
+        <ion-icon slot="start" size="small" color="primary" name="thermometer"></ion-icon>
+        <ion-icon slot="end" color="danger" name="thermometer"></ion-icon>
+      </ion-range>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked"><h2>Commentaire</h2></ion-label>
+      <ion-textarea placeholder="De plus, je trouve que..."></ion-textarea>
+    </ion-item>
+
+
+  </ion-list>
+
+</ion-content>
