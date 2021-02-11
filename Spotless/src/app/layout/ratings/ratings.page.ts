@@ -6,6 +6,12 @@ import { Rating } from '../../models/rating';
 import { RatingService } from '../../services/rating.service';
 import { ActivatedRoute } from '@angular/router';
 
+import {FormPage} from './form/form.page';
+
+
+import { ModalController } from '@ionic/angular';
+
+
 @Component({
   selector: 'app-ratings',
   templateUrl: './ratings.page.html',
@@ -14,6 +20,7 @@ import { ActivatedRoute } from '@angular/router';
 export class RatingPage implements ViewDidEnter {
   ratings: Rating[];
   place_id: string;
+  dataReturned: [];
 
   constructor(
     // Inject the AuthService
@@ -23,8 +30,12 @@ export class RatingPage implements ViewDidEnter {
     //service des ratings
     private ratingService: RatingService,
     //recuper l'id du place
-    private route: ActivatedRoute
-  ) { 
+    private route: ActivatedRoute,
+
+    // public navCtrl: NavController,
+
+    public modalController: ModalController
+  ) {
 
     this.ratings = [
       // { _id:'5fa96f68224b3a0017733314', location:{coordinates:[32.520125,62.637738],type:'Point'}, postedBy:'5fa91dcc1a32460017971d7d', title:'un spot bien nice', description:'Bar', rates:'2'},
@@ -37,26 +48,33 @@ export class RatingPage implements ViewDidEnter {
 
   ionViewDidEnter(): void {
     // Make an HTTP request to retrieve the places.
-    const url = "http://spotlessapp.herokuapp.com/ratings?place="+this.place_id;
+    const url = "http://spotlessapp.herokuapp.com/ratings?place=" + this.place_id;
     this.http.get<Rating[]>(url).subscribe(result => {
-      this.ratings=result;
+      this.ratings = result;
       console.log(`ratings loaded`, result);
-    
+
     });
 
   }
-
-  // addPlace() {
-  //   this.placeService.getPlace().subscribe(place => {
-  //     this.places.push(place);
-  //   }, err => {
-  //     console.warn('Could not get new place', err);
-  //   });
-  // }
-  // ...
-
-
-  showModal(){
-console.log("hello modal");
-  }
+    async openModal() {
+      const modal = await this.modalController.create({
+        component: FormPage,
+        componentProps: {
+          "paramID": 123,
+          "paramTitle": "Test Title"
+        }
+      });
+  
+      modal.onDidDismiss().then((dataReturned) => {
+        if (dataReturned !== null) {
+          this.dataReturned = dataReturned.data;
+          //alert('Modal Sent Data :'+ dataReturned);
+        }
+      });
+  
+      return await modal.present();
+    }
 }
+
+
+

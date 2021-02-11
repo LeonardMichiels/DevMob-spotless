@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: ':place-id',
     component: RatingPage
+  },
+  {
+    path: 'form',
+    loadChildren: () => import('./form/form.module').then( m => m.FormPageModule)
   }
 ];
 
