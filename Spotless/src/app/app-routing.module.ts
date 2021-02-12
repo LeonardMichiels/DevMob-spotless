@@ -18,11 +18,7 @@ const routes: Routes = [
   {
     path: 'register',
     loadChildren: () => import('./auth/register/register.module').then( m => m.RegisterPageModule)
-  },
-  {
-    path: 'myratings',
-    loadChildren: () => import('./compte/myratings/myratings.module').then( m => m.MyratingsPageModule)
-  },
+  }
 ];
 
 @NgModule({

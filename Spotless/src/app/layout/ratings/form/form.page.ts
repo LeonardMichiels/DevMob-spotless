@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { 
-ModalController, 
-NavParams 
+import {
+  ModalController,
+  NavParams
 } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Place } from '../../../models/place';
+import { Rating } from '../../../models/rating';
 import { AuthService } from "src/app/auth/auth.service";
 import { HttpHeaders } from '@angular/common/http';
 
@@ -19,77 +20,65 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 export class FormPage implements OnInit {
   places: Place[];
   place_id: string;
-  user:string;
+  user: string;
 
   pictureData: string;
 
+
+  newRating: Partial<Rating> = {};
+
   constructor(
-    private modalController: ModalController,
+    readonly modalController: ModalController,
     private navParams: NavParams,
     private route: ActivatedRoute,
     public http: HttpClient,
     private auth: AuthService,
-   // private camera: Camera
+    // private camera: Camera
 
-  ) { 
+  ) {
 
   }
 
   ngOnInit() {
-  //  this.places=[];
+    //  this.places=[];
 
     console.table(this.navParams);
     this.place_id = this.navParams.data.placeId;
     console.log(this.place_id);
-
-
-
-        // // Make an HTTP request to retrieve the places.
-        // const url = "http://spotlessapp.herokuapp.com/places/" + this.place_id;
-        // this.http.get<Place[]>(url).subscribe(result => {
-        //   this.places = result;
-        //   console.log(result);
-        // });
-  }
-
-  async closeModal() {
-    const onClosedData: string = "Wrapped Up!";
-    await this.modalController.dismiss(onClosedData);
   }
 
 
-  submitform(){
-    let mask= document.getElementById("maskform").value;
-    let disinfectant= document.getElementById("disinfectionform").value;
-    let distancing= document.getElementById("distanceform").value;
-    let cleaning= document.getElementById("cleaningform").value;
-    let control= document.getElementById("controlform").value;
-    let comment = document.getElementById("commentform").value;
-
-let data={
-//"author": this.auth.getUser()["source"]["source"]["_events"][0].user._id,
-//"place": this.place_id,
-"mask": mask,
-"disinfectant": disinfectant,
-"distancing": distancing,
-"cleaning": cleaning,
-"control": control,
-"comment": comment,
+  onRangeChange(name: string, value: number) {
+    this.newRating[name] = value;
   }
 
-  let httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${this.auth.getToken()["source"]["source"]["_events"][0].token}`
+  private fixRatingModel(res: any) {
+    this.auth.getUser().subscribe(user => {
+      res.author = { _id: res.author, username: user.username };
+      this.modalController.dismiss(res);
+    });
+    
+  }
+
+
+  submitform() {
+    this.auth.getToken().subscribe(token => {
+      let httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        })
+      };
+
+      this.http.post<any>("http://spotlessapp.herokuapp.com/ratings/" + this.place_id, this.newRating, httpOptions)//requestOptions
+        .subscribe(res => {
+          console.log(res);
+          this.fixRatingModel(res);
+        }, error => {
+          console.log(error);
+        });
     })
-  };
 
-  this.http.post("http://spotlessapp.herokuapp.com/ratings/"+this.place_id, data, httpOptions)//requestOptions
-  .subscribe(data => {
-    console.log(data);
-   }, error => {
-    console.log(error);
-  });
 
   }
 

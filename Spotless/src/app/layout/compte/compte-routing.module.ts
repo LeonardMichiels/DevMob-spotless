@@ -7,10 +7,6 @@ const routes: Routes = [
   {
     path: '',
     component: ComptePage
-  },
-  {
-    path: 'myratings',
-    loadChildren: () => import('./myratings/myratings.module').then( m => m.MyratingsPageModule)
   }
 ];
 

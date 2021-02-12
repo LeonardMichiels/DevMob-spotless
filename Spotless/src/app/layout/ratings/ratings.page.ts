@@ -68,7 +68,9 @@ export class RatingPage implements ViewDidEnter {
   
       modal.onDidDismiss().then((dataReturned) => {
         if (dataReturned !== null) {
-          this.dataReturned = dataReturned.data;
+        console.log(dataReturned);
+          this.ratings.push(dataReturned.data);
+          // this.dataReturned = dataReturned.data;
           //alert('Modal Sent Data :'+ dataReturned);
         }
       });

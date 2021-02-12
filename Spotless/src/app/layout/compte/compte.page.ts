@@ -19,7 +19,6 @@ user:string;
   ngOnInit() {
 
     this.user = this.auth.getUser()["source"]["source"]["_events"][0].user.username;
-    console.log(this.user);
     //recuper les infos de la personne
   }
 
