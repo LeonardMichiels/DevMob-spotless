@@ -60,8 +60,9 @@ export class RatingPage implements ViewDidEnter {
       const modal = await this.modalController.create({
         component: FormPage,
         componentProps: {
-          "paramID": 123,
-          "paramTitle": "Test Title"
+
+          "placeId": this.place_id
+    
         }
       });
   

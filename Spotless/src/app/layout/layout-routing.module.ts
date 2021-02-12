@@ -24,10 +24,14 @@ const routes: Routes = [
       {
         path: 'ratings',
         loadChildren: () => import('./ratings/ratings.module').then( m => m.RatingsPageModule)
-      }
+      },
+      {
+        path: 'myratings',
+        loadChildren: () => import('./myratings/myratings.module').then( m => m.MyratingsPageModule)
+      },
    
     ]
-  },
+  }
 
 ];
 

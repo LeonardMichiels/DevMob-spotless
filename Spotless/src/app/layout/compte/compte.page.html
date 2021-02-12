@@ -5,14 +5,14 @@
 </ion-header>
 
 <ion-content>
-  <ion-list style="text-align:center">
 
-    <!-- <ion-avatar >
-      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-    </ion-avatar> -->
-  <ion-text class="ion-text-center">Nom Prenom</ion-text>
+
+ 
+  <img  src="../../../assets/images/fighters.jpg">
+
+  <h2 style="text-align:center" class="ion-text-center">{{user}}</h2>
   
-  <ion-button  href="">
+  <ion-button  expand="block" routerLink="/myratings">
       <ion-icon slot="start" name="star"></ion-icon>
       Mes évaluations
     </ion-button>
@@ -22,10 +22,9 @@
     Log out
   </ion-button> -->
   <!-- Logout button -->
-  <ion-buttons slot="end">
-    <ion-button (click)="logOut()">Log Out
+
+    <ion-button expand="block" color="danger" (click)="logOut()">Log Out
       <ion-icon name="log-out"></ion-icon>
     </ion-button>
-  </ion-buttons>
-  </ion-list>
+
 </ion-content>

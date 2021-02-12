@@ -8,13 +8,20 @@ import { FormPageRoutingModule } from './form-routing.module';
 
 import { FormPage } from './form.page';
 
+import { Camera } from '@ionic-native/camera';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FormPageRoutingModule
+    FormPageRoutingModule,
   ],
-  declarations: [FormPage]
+  declarations: [
+    FormPage
+  ], 
+  providers:[
+    //Camera
+  ]
 })
 export class FormPageModule {}
