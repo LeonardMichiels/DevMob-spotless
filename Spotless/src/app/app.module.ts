@@ -13,6 +13,7 @@ import { IonicStorageModule } from "@ionic/storage";
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AuthInterceptorService } from "./auth/auth-interceptor.service";
+//import { PictureProvider } from './providers/picture/picture';
 
 
 
@@ -23,6 +24,8 @@ import { AuthInterceptorService } from "./auth/auth-interceptor.service";
   providers: [
     StatusBar,
     SplashScreen,
+   // PictureProvider,
+
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     {
       provide: HTTP_INTERCEPTORS,

@@ -13,30 +13,27 @@
   <h2 style="text-align:center" class="ion-text-center">{{user}}</h2>
 
 
-  <ion-item>
-    <ion-label>Notifications</ion-label>
-    <ion-toggle checked [(ngModel)]="notifications"></ion-toggle>
-  </ion-item>
-  <ion-item>
+
+  <ion-item style="margin-bottom:1cm;" >
     <ion-label>Ma position</ion-label>
     <ion-toggle checked [(ngModel)]="position"></ion-toggle>
   </ion-item>
   
-  <ion-button  expand="block" routerLink="/myratings">
-      <!-- <ion-icon slot="start" name="star"></ion-icon> -->
+  <ion-button  style="margin-bottom:1cm;" expand="block" routerLink="/myratings">
       Mes évaluations
     </ion-button>
-  
-  <!-- <ion-button  href="" color="danger">
-    <ion-icon slot="start" name="log-out-outline"></ion-icon>
-    Log out
-  </ion-button> -->
-  <!-- Logout button -->
 
-    <ion-button expand="block" color="danger" (click)="logOut()">Log Out
+    <ion-button style="margin-bottom:1cm;" expand="block" color="danger" (click)="logOut()">
+      Log Out 
       <ion-icon name="log-out"></ion-icon>
     </ion-button>
 
-<ion-text style="text-align: center;">© Spotless App 2021</ion-text>
+    <ion-grid>
+      <ion-row>
+        <ion-col style="text-align: center;">
+<ion-text style="text-align: center;"> © Spotless App 2021</ion-text>
+</ion-col>
+</ion-row>
+</ion-grid>
 
 </ion-content>

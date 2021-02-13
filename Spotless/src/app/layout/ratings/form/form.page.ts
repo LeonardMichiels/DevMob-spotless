@@ -12,6 +12,9 @@ import { HttpHeaders } from '@angular/common/http';
 
 import { Camera, CameraOptions } from '@ionic-native/camera';
 
+//import { QimgImage } from '../../../models/qimg-image';
+//import { PictureProvider } from '../../../providers/picture/picture';
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.page.html',
@@ -23,7 +26,7 @@ export class FormPage implements OnInit {
   user: string;
 
   pictureData: string;
-
+  //picture: QimgImage;
 
   newRating: Partial<Rating> = {};
 
@@ -33,6 +36,7 @@ export class FormPage implements OnInit {
     private route: ActivatedRoute,
     public http: HttpClient,
     private auth: AuthService,
+    //private pictureService: PictureProvider
     // private camera: Camera
 
   ) {
@@ -40,7 +44,6 @@ export class FormPage implements OnInit {
   }
 
   ngOnInit() {
-    //  this.places=[];
 
     console.table(this.navParams);
     this.place_id = this.navParams.data.placeId;
@@ -57,7 +60,7 @@ export class FormPage implements OnInit {
       res.author = { _id: res.author, username: user.username };
       this.modalController.dismiss(res);
     });
-    
+
   }
 
 
@@ -83,17 +86,12 @@ export class FormPage implements OnInit {
   }
 
   // takePicture() {
-  //   const options: CameraOptions = {
-  //     quality: 100,
-  //     destinationType: this.camera.DestinationType.DATA_URL,
-  //     encodingType: this.camera.EncodingType.JPEG,
-  //     mediaType: this.camera.MediaType.PICTURE
-  //   };
-  //   this.camera.getPicture(options).then(pictureData => {
-  //     this.pictureData = pictureData;
-  //   }).catch(err => {
-  //     console.warn(`Could not take picture because: ${err.message}`);
+  //   this.pictureService.takeAndUploadPicture().subscribe(picture => {
+  //     this.picture = picture;
+  //   }, err => {
+  //     console.warn('Could not take picture', err);
   //   });
   // }
+
 
 }

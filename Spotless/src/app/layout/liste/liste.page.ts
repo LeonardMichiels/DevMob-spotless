@@ -39,8 +39,10 @@ export class ListePage implements ViewDidEnter {
 
     //console.log(searchedValue);
 
-    const filtreTexte = (arr:Array<Place>, requete:string) => {
-      return arr.filter(el => el.toLowerCase().indexOf(requete.toLowerCase()) !== -1);
+    function filtreTexte(arr, requete) {
+      return arr.filter(function (el) {
+        return el.toLowerCase().indexOf(requete.toLowerCase()) !== -1;
+      })
     }
 
     console.log(filtreTexte(this.places, searchedValue));
