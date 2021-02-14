@@ -14,6 +14,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AuthInterceptorService } from "./auth/auth-interceptor.service";
 
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 //import { PictureProvider } from './providers/picture/picture';
 
@@ -25,6 +26,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, IonicStorageModule.forRoot(),LeafletModule],
   providers: [
     StatusBar,
+    Geolocation,
 
    // PictureProvider,
     // { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

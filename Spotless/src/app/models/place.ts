@@ -6,3 +6,9 @@ export class Place {
     location: object;
     rates: string;
   }
+  export interface ListResponse<T> {
+    page: number;
+    pageSize: number;
+    total: number;
+    data: T[];
+}

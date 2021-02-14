@@ -9,6 +9,7 @@ import { CartePageRoutingModule } from './carte-routing.module';
 import { CartePage } from './carte.page';
 
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     FormsModule,
     IonicModule,
     CartePageRoutingModule,
-    LeafletModule
+    LeafletModule,
+    HttpClientModule
   ],
   declarations: [CartePage]
 })
