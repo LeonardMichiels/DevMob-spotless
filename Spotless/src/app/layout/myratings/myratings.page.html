@@ -17,10 +17,10 @@
     </ion-card-header>
     <ion-card-content>
       <ion-grid>
-  <ion-row>
-<ion-col>{{ rating.image }}</ion-col>
-<ion-col>{{ rating.comment }}</ion-col>
-  </ion-row>
+        <ion-row>
+          <!-- <ion-col>{{ rating.image }}</ion-col> -->
+          <!-- <ion-col> -->{{ rating.comment }}<!-- </ion-col> -->
+            </ion-row>
   <ion-row>
     <ion-col> <svg id="Raggruppa_8" data-name="Raggruppa 8" xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16">
       <g id="Raggruppa_7" data-name="Raggruppa 7">
@@ -72,7 +72,7 @@
     </ion-button>
   </ion-col>
   <ion-col>     
-    <ion-button expand="block" (click)="modify()">
+    <ion-button expand="block" (click)="openModal(rating.place._id, rating._id)">
     <ion-icon name="brush"></ion-icon>
   </ion-button>
 </ion-col>

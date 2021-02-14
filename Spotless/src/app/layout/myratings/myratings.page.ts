@@ -7,6 +7,7 @@ import { RatingService } from '../../services/rating.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Storage } from "@ionic/storage";
 import { HttpHeaders } from '@angular/common/http';
+import {FormPage} from '../ratings/form/form.page';
 
 
 import { ModalController } from '@ionic/angular';
@@ -54,16 +55,55 @@ export class MyratingsPage implements ViewDidEnter {
     // Make an HTTP request to see user's ratings
     const url = "http://spotlessapp.herokuapp.com/ratings?author="+ this.user_id;
     this.http.get<Rating[]>(url).subscribe(result => {
-      this.ratings = result;
+      this.ratings = result.sort();
       console.log(`ratings of user loaded`, result);
 
     });
 
   }
 
-modify(){
+
+  async openModal(place_id, rating_id) {
+
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${this.auth.getToken()["source"]["source"]["_events"][0].token}` //a corriger
+      })
+    };
+  
+    this.http.delete("http://spotlessapp.herokuapp.com/ratings/"+rating_id, httpOptions)
+    .subscribe(res => { 
+      console.log("resultat"+res);
+    //  Router.navigatebyUrl();
+
+    });
+
+
+    const modal = await this.modalController.create({
+      component: FormPage,
+      componentProps: {
+
+        "placeId": place_id,
+
+  
+      }
+    });
+
+    modal.onDidDismiss().then((dataReturned) => {
+      if (dataReturned !== null) {
+      console.log(dataReturned);
+
+        // this.dataReturned = dataReturned.data;
+        //alert('Modal Sent Data :'+ dataReturned);
+      }
+      this.ratings.push(dataReturned.data);
+    });
+
+    return await modal.present();
+  }
   //open form, passer lieu
-};
+
 
 
 

@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-button routerLink="/home">
       <ion-icon name="chevron-back-outline"></ion-icon>
     </ion-button>
@@ -11,21 +11,21 @@
 <ion-content>
 
   <ion-content padding>
-    <form #form="ngForm" (ngSubmit)="register(values)" method="post">
-      <ion-item>
+    <form #form="ngForm" (ngSubmit)="submitform(values)" method="post">
+      <ion-item >
           <ion-label position="floating">Username</ion-label>
-          <ion-input [(ngModel)]="username" name="username"></ion-input>
+          <ion-input required="true" (ionChange)='onRangeChange("username",$event.detail.value)' name="username"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="floating">Password</ion-label>
-        <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
-      </ion-item>
-    
-      <ion-button type="submit" expand="full" color="danger">Register</ion-button>
+        <ion-input (ionChange)='onRangeChange("password",$event.detail.value)' required="true" type="password"  name="password"></ion-input>
+      </ion-item  >
+      <p style="margin-bottom:1cm;"></p>
+      <ion-button style="margin-bottom:0.5cm;" type="submit" expand="full" color="primary">S'enregistrer</ion-button>
     </form>
-    <p text-center>Already have a account?</p>
-    <ion-button expand="full" color="primary" routerLink="/login">Login</ion-button>
+    <p style="text-align:center; margin-bottom:0.5cm;">Êtes-vous deja enregistré?</p>
+    <ion-button expand="full" color="danger" routerLink="/login">Login</ion-button>
   </ion-content>
 
 </ion-content>

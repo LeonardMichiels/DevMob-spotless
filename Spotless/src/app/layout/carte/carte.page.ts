@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
- 
-import { latLng, MapOptions, marker,Marker,tileLayer,Map } from 'leaflet';
+import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
+import { Map, latLng, marker, Marker, MapOptions, tileLayer } from 'leaflet';
+import { Place,ListResponse } from 'src/app/models/place';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -9,17 +13,18 @@ import { latLng, MapOptions, marker,Marker,tileLayer,Map } from 'leaflet';
   styleUrls: ['./carte.page.scss'],
 })
 export class CartePage implements OnInit {
+
   mapOptions: MapOptions;
-  mapMarkers: Marker[];
+  mapMarkers: Marker[] = [];
+  places: Place[] ;
 
+  constructor(
+    private geolocation: Geolocation,
+    public http: HttpClient,
+    private router: Router,
+    private location: Location
+  ) { 
 
-  onMapReady(map: Map) {
-    setTimeout(() => map.invalidateSize(), 0);
-  }
-
-
-  constructor() {
-    
     this.mapOptions = {
       layers: [
         tileLayer(
@@ -27,17 +32,54 @@ export class CartePage implements OnInit {
           { maxZoom: 18 }
         )
       ],
-      zoom: 13,
-      center: latLng(46.519962, 6.633597)
+      zoom: 7,
+      center: latLng(46.816479, 8.453503)
     };
-    this.mapMarkers = [
-      marker([ 46.518186, 6.631524 ], { title: "place1" , alt:"Place 1"} ),
-      marker([ 46.510796, 6.637395 ], { title: "place2", alt:"Place 2" } ),
-      marker([ 46.524992, 6.632267 ], { title: "place3" , alt:"Place 3"})
-    ];
-   }
+  }
+
+  onMapReady(map: Map) {
+    setTimeout(() => map.invalidateSize(), 0);
+  }
+
+ /*  onSelect(Place) {
+    this.router.navigate(['ratings/', place._id]);
+  } */
+
+  backClicked() {
+    this.location.back();
+  }
 
   ngOnInit() {
+    this.geolocation.getCurrentPosition().then((position: Geoposition) => {
+      const coords = position.coords;
+
+   this.mapMarkers = [
+        
+      ];
+      this.mapOptions = {
+        zoom: 16,
+        center: latLng(coords.latitude, coords.longitude)
+      };
+
+      console.log(`User is at ${coords.longitude}, ${coords.latitude}`);
+    }).catch(err => {
+      console.warn(`Could not retrieve user position because: ${err.message}`);
+    });
+
+    const url = `http://spotlessapp.herokuapp.com/places`;
+    this.http.get<Place[]>(url).subscribe(result => {
+      result.forEach(place => {
+        this.mapMarkers.push(marker([place.location.coordinates[0], place.location.coordinates[1]]).bindPopup(
+          `<h6>${place.title}</h6>
+         
+          <p>${place.description}</p>
+          <a href="ratings/${place._id}">Voir les évaluations</a>
+          `
+          , 
+          ));
+      });
+    });
   }
+
 
 }

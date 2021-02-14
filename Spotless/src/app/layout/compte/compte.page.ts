@@ -28,6 +28,6 @@ export class ComptePage implements OnInit {
   logOut() {
     console.log("logging out...");
     this.auth.logOut();
-    this.router.navigateByUrl("/login")
+    this.router.navigateByUrl("/home")
   }
 }

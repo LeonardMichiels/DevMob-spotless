@@ -1,21 +1,26 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>HOME</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Accueil</ion-title>
 
   </ion-toolbar>
 </ion-header>
-
 <ion-content class="auth-form">
+
+  <img src="../../assets/images/coronavirus.gif" />
+
+  <h2 style="text-align:center">Bienvenue dans Spotless!</h2>
+
+  <p style="text-align:center; margin-bottom:0.5cm;">Grâce à cette app, tu pourras trouver et déguster un drink ou un repas avec moins de stress!</p>
+
   <ion-grid>
     <ion-row>
-      <ion-col align-self-center>
+      <ion-col style="text-align:center">
 
-        <ion-button [routerLink]="['/registration']" expand="block" color="primary">Créer un compte</ion-button>
+        <ion-button style="margin-bottom:0.5cm;"  [routerLink]="['/register']" expand="block" color="primary">Créer un compte</ion-button>
 
-        <span class="divider line one-line">ou</span>
 
-        <span class="already">Déjà un compte?</span>
-
+        <p style="text-align:center; margin-bottom:0.5cm;">Déjà un compte?</p>
+        
         <ion-button [routerLink]="['/login']" expand="block" color="danger">S'identifier</ion-button>
       </ion-col>
     </ion-row>
