@@ -31,10 +31,8 @@ const routes: Routes = [
       },
    
     ]
-  },  {
-    path: 'carte',
-    loadChildren: () => import('./carte/carte.module').then( m => m.CartePageModule)
-  }
+  },
+ 
 
 
 ];

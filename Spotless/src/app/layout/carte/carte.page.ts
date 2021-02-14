@@ -53,11 +53,9 @@ export class CartePage implements OnInit {
     this.geolocation.getCurrentPosition().then((position: Geoposition) => {
       const coords = position.coords;
 
-   this.mapMarkers = [
-        
-      ];
+      this.mapMarkers.push(marker([coords.latitude, coords.longitude]));
       this.mapOptions = {
-        zoom: 16,
+        zoom: 20,
         center: latLng(coords.latitude, coords.longitude)
       };
 
@@ -67,19 +65,20 @@ export class CartePage implements OnInit {
     });
 
     const url = `http://spotlessapp.herokuapp.com/places`;
-    this.http.get<Place[]>(url).subscribe(result => {
+     this.http.get<Place[]>(url).subscribe(result => {
       result.forEach(place => {
+        
         this.mapMarkers.push(marker([place.location.coordinates[0], place.location.coordinates[1]]).bindPopup(
           `<h6>${place.title}</h6>
          
           <p>${place.description}</p>
-          <a href="ratings/${place._id}">Voir les évaluations</a>
+          <a href="/ratings/${place._id}">Voir les évaluations</a>
           `
           , 
           ));
       });
     });
-  }
+  } 
 
 
 }
