@@ -1,25 +1,23 @@
 # Spotless App
 
-
-
 ## **Description**
 
-**Spotless** is a mobile app implemented with [Angular](https://angular.io/docs) on [Ionic](https://ionicframework.com/docs). It has been developed during the DevMob course at HEIG-VD given by [Mathias Oberson](https://github.com/Tazaf) in the first semester of 2021. The app is kind of a new Trip Advisor, based on COVID-19 safety scores. The goal of the app is to show you the most safe gastronomic places (bars, restaurants, clubs, take away,... ) in Switzerland (and expandable to the world) to enjoy a drink or a meal. So the people most at risk will be informed about safer places.
+**Spotless** is a mobile app implemented with [Angular](https://angular.io/docs) on [Ionic](https://ionicframework.com/docs). It has been developed during the DevMob course at HEIG-VD given by [Mathias Oberson](https://github.com/Tazaf) in the first semester of 2021. The app is kind of a new Trip Advisor, based on COVID-19 safety scores. The goal of the app is to show you the safest gastronomic places (bars, restaurants, clubs, take away,... ) in Switzerland (and expandable to the world) to enjoy a drink or a meal. So the people most at risk will be informed about safer places.
 
 Every place its rated in categories, where 1 is the lowest score and 5 the highest:
 
 - **Mask score (1-5)**
   if everyone in the place has a mask
 - **Disinfectant score  (1-5)**
-  if in the place there's desinfectant, quality of the disinfectant
+  disponibility and/or quality of the disinfectant
 - **Distancing score (1-5)**
-  If costumers are well distanced while consuming food/drink, if there're plexiglass separators
+  If custumers are well distanced while consuming food/drink, if there're plexiglass separators
 - **Cleaning score (1-5)**
-  If the surfaces of the place are well cleaned, with regularity or after every costumer
+  If the surfaces of the place are well cleaned, with regularity or after every custumer
 - **Controle score (1-5)**
-  if there's somebody who check the compliance of the rules in the place.
+  if there's somebody who checks the compliance of the rules in the place.
 - **Comment (optional)**
-  if the users want to add a personal advice of the place
+  if the users want to add personal advice of the place
 - Photo (optional, not implemented)
   if the users want to add a personal photo to explain his comment
 
@@ -54,7 +52,7 @@ ionic capacitor copy android
 ionic capacitor run android
 ```
 
-## **What can you do with the app ?**
+## **What can you do with the Spotless app ?**
 
 - log in to the app or create an account
 - see all of the gastronomic places on a map (around me)
@@ -62,34 +60,34 @@ ionic capacitor run android
 - search a place by the search bar
 - rate the other places
 
-### **Create an account**
+### **"Create an account"page**
 
 If you don't have an account, you have to create one.
 
-### **Log in**
+### **"Log in" page**
 
 Now you've an account, you can simply log in.
 
-### **Map page**
+### **"Map" page**
 
 You can see the localisation of the places on a map, and select a place to see his ratings. The user can see his position.
 
-### **Liste page**
+### **"Liste" page**
 
 You can get the entire list of places, or search a specific place with the search bar. The user can tap on a card to select the place and see his ratings.
 
-### Ratings of a specific place
+### "Ratings of a specific place" page
 
 List of all the ratings of a specific place. 
 
-### Create a rate page
+### "Create a rate" page
 
-A form with all the categories and a slider to select the score. The user can add a comment if he/she want.
+On tap on the "+" in the ratings pages, a form with all the categories and a slider to select the score will appear. The user can add a comment if he/she want.
 
-### **Compte Page**
+### **"Compte" page**
 
 On the user page, there's the possibility to log out and see all the personal ratings.
 
-### **Ratings create by logged user**
+### **"Mes évaluations" page**
 
 List of all the ratings create by the logged user. Possibility to delete it or modify it.
