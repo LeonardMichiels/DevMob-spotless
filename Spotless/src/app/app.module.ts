@@ -21,7 +21,9 @@ import { AuthInterceptorService } from "./auth/auth-interceptor.service";
   providers: [
     StatusBar,
     // { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
-    SplashScreen,
+
+    // SplashScreen,
+
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     {
       provide: HTTP_INTERCEPTORS,

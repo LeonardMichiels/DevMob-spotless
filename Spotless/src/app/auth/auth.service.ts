@@ -54,12 +54,13 @@ export class AuthService {
     );
   }
 
-  logOut() {
-    this.authSource.next();
-    // Remove the stored authentication response from storage when logging out.
-    this.storage.remove('auth');
-    console.log('User logged out');
-  }
+
+    logOut() {
+      this.authSource.next();
+      // Remove the stored authentication response from storage when logging out.
+      this.storage.remove('auth');
+      console.log('User logged out');
+    }
 
   private saveAuth(auth: AuthResponse): Observable<void> {
     return from(this.storage.set('auth', auth));
