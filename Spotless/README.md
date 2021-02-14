@@ -37,7 +37,7 @@ cd Spotless
 npm install
 ionic serve
 ```
-
+To make sure you get the full functionnality be sure to wait untill all chunks are loaded. Otherwise you might experience some troubles with the loading of the map page and associated pins. (Strange behaviour whilst testing.)*
 To deploy the application on your phone, you can use Ionic built in tools. 
 
 See [Ionic documentation](https://ionicframework.com/docs/v1/guide/testing.html) about testing and deploying the app. if you want to test this app on a simulator (ios and android):
@@ -99,3 +99,7 @@ Thanks for your interest if you've read this far, we hope you haven't made you c
 
 
  Made with ❤️ and 🤯 by Spotless group
+
+ ## Notes
+
+ * If you dont want to wait the chunks to load you can comment line 68 to 60 in carte.page.ts then do an "ionic serve" then remove the comments and serve again. 🤔
