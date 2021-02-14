@@ -12,6 +12,9 @@ import { IonicStorageModule } from "@ionic/storage";
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AuthInterceptorService } from "./auth/auth-interceptor.service";
+
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+
 //import { PictureProvider } from './providers/picture/picture';
 
 
@@ -19,7 +22,7 @@ import { AuthInterceptorService } from "./auth/auth-interceptor.service";
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, IonicStorageModule.forRoot()],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, IonicStorageModule.forRoot(),LeafletModule],
   providers: [
     StatusBar,
 
