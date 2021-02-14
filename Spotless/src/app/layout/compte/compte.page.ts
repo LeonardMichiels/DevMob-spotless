@@ -8,7 +8,8 @@ import { AuthService } from "src/app/auth/auth.service";
   styleUrls: ['./compte.page.scss'],
 })
 export class ComptePage implements OnInit {
-user:string;
+  user: string;
+
   constructor(
     // Inject the authentication provider.
     private auth: AuthService,
@@ -18,7 +19,8 @@ user:string;
 
   ngOnInit() {
 
-    this.user = this.auth.getUser()["source"]["source"]["_events"][0].user.username;
+     this.user = this.auth.getUser()["source"]["source"]["_events"][0].user.username;
+    //   console.log(this.user);
     //recuper les infos de la personne
   }
 

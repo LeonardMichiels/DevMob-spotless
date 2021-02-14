@@ -4,7 +4,7 @@ import { ViewDidEnter } from '@ionic/angular';
 import { AuthService } from 'src/app/auth/auth.service';
 import { Rating } from '../../models/rating';
 import { RatingService } from '../../services/rating.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Storage } from "@ionic/storage";
 import { HttpHeaders } from '@angular/common/http';
 
@@ -22,6 +22,9 @@ export class MyratingsPage implements ViewDidEnter {
   ratings: Rating[];
   user_id: any;
   dataReturned: [];
+  user: string;
+
+
   constructor(
     // Inject the AuthService
     private auth: AuthService,
@@ -64,8 +67,6 @@ modify(){
 
 
 
-
-
   async delete(_id){
 
 console.log(_id);
@@ -87,12 +88,25 @@ console.log(_id);
             let httpOptions = {
               headers: new HttpHeaders({
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${this.auth.getToken()["source"]["source"]["_events"][0].token}`
+                'Authorization': `Bearer ${this.auth.getToken()["source"]["source"]["_events"][0].token}` //a corriger
               })
             };
           
-            this.http.delete("http://spotlessapp.herokuapp.com/ratings/"+_id, httpOptions)//requestOptions
-            .subscribe(res => { console.log(res); this.ionViewDidEnter();});
+            this.http.delete("http://spotlessapp.herokuapp.com/ratings/"+_id, httpOptions)
+            .subscribe(res => { 
+              console.log("resultat"+res);
+            //  Router.navigatebyUrl();
+
+            });
+
+            // const url = "http://spotlessapp.herokuapp.com/ratings?author="+ this.user_id;
+            // this.http.get<Rating[]>(url).subscribe(result => {
+            //   this.ratings = result;
+            //   console.log(`ratings of user loaded`, result);
+        
+            // });
+
+
           }
         }
       ]

@@ -44,10 +44,7 @@ export class FormPage implements OnInit {
   }
 
   ngOnInit() {
-
-    console.table(this.navParams);
     this.place_id = this.navParams.data.placeId;
-    console.log(this.place_id);
   }
 
 
@@ -62,8 +59,7 @@ export class FormPage implements OnInit {
     });
 
   }
-
-
+  
   submitform() {
     this.auth.getToken().subscribe(token => {
       let httpOptions = {
