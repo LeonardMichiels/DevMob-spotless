@@ -1,9 +1,9 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-button routerLink="/liste">
+    <ion-button routerLink="/compte">
       <ion-icon name="chevron-back-outline"></ion-icon>
     </ion-button>
-    <ion-title>Avis</ion-title>
+    <ion-title>Mes évaluations</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,7 +12,7 @@
 
   <ion-card  class="ion-activated" *ngFor='let rating of ratings'>
     <ion-card-header>
-      <ion-card-title >{{ rating.author.username }}</ion-card-title>
+      <ion-card-title >{{ rating.place.title }}</ion-card-title>
       <ion-card-subtitle >{{ rating.dateAdd }}</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
@@ -65,14 +65,22 @@
     </svg>
     {{ rating.control }}</ion-col>
   </ion-row>
+  <ion-row>
+    <ion-col>     
+      <ion-button expand="block"  color="danger" (click)="delete(rating._id)">
+      <ion-icon name="trash-outline"></ion-icon>
+    </ion-button>
+  </ion-col>
+  <ion-col>     
+    <ion-button expand="block" (click)="modify()">
+    <ion-icon name="brush"></ion-icon>
+  </ion-button>
+</ion-col>
+
+  </ion-row>
       </ion-grid>
     </ion-card-content>
   </ion-card>
 
-  <ion-fab horizontal="center" vertical="bottom" slot="fixed" (click)="openModal()"> 
-<ion-fab-button color="primary" >
-<ion-icon name="add"></ion-icon>
-</ion-fab-button>
-  </ion-fab>
 
 </ion-content>
