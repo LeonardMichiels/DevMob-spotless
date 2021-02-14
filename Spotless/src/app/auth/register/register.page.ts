@@ -8,13 +8,15 @@ import { HttpClient } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
 import { User } from '../../models/user';
 
+import { AlertController } from '@ionic/angular';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage {
-  user: User;
+  newUser: Partial<User>={};
 
   /**
  * This authentication request object will be updated when the user
@@ -28,28 +30,53 @@ export class RegisterPage {
  */
   loginError: boolean;
 
-  constructor(private authService: AuthService, private router: Router, private auth: AuthService, public http: HttpClient,) {
+  constructor(
+    private authService: AuthService, 
+    private router: Router, 
+    private auth: AuthService, 
+    public alertController: AlertController,
+    public http: HttpClient,) {
     this.authRequest = new AuthRequest();
   }
 
-  register(values) {
-    this.user = values;
-    console.log(this.user);
-    // this.auth.getToken().subscribe(token => {
-    //   let httpOptions = {
-    //     headers: new HttpHeaders({
-    //       'Content-Type': 'application/json',
-    //     })
-    //   };
 
-    //   this.http.post<any>("http://spotlessapp.herokuapp.com/ratings/", values, httpOptions)//requestOptions
-    //     .subscribe(res => {
-    //       console.log(res);
-    //     }, error => {
-    //       console.log(error);
-    //     });
-    // })
 
+  onRangeChange(name: string, value: number) {
+    this.newUser[name] = value;
+    console.log(this.newUser);
+  }
+
+
+
+  submitform() {
+    this.auth.getToken().subscribe(token => {
+      let httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+        })
+      };
+
+      this.http.post<any>("http://spotlessapp.herokuapp.com/users/", this.newUser, httpOptions)//requestOptions
+        .subscribe(res => {
+          console.log(res);
+              this.router.navigateByUrl("/login")
+        }, error => {
+    
+        });
+    })
+
+  }
+
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Utilisateur crée !',
+      message: 'Veuillez vous connecter dans la page de login',
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 
 

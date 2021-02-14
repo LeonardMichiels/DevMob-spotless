@@ -1,10 +1,11 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Liste</ion-title>
+    <ion-title>Liste des lieux</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-searchbar placeholder="Recherchez un lieu" animated autocomplete="on" (ionChange)="searchPlace($event)"></ion-searchbar>
+<ion-searchbar placeholder="Recherchez un lieu" animated autocomplete="on" (ionChange)="searchPlace($event)" (ionCancel)="showDefault()"></ion-searchbar>
 <ion-content>
+
 
   <ion-card class="ion-activated" *ngFor='let place of places' routerLink="/ratings/{{place._id}}">
     <ion-card-header id="place-title">
