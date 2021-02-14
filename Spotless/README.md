@@ -1,4 +1,4 @@
-# Spotless App
+# Spotless App 😷
 
 ## **Description**
 
@@ -21,9 +21,7 @@ Every place its rated in categories, where 1 is the lowest score and 5 the highe
 - Photo (optional, not implemented)
   if the users want to add a personal photo to explain his comment
 
-
-
-The app is linked to [SpotlessAPI](https://github.com/LeonardMichiels/Shortcut) (API REST) developed during ArchiOWeb course given by [Simon Oulevay](https://github.com/AlphaHydrae).
+The app is directly linked to [SpotlessAPI](https://github.com/LeonardMichiels/Shortcut) (API REST) developed during ArchiOWeb course given by [Simon Oulevay](https://github.com/AlphaHydrae). [Check](https://spotlessapp.herokuapp.com/apidoc/) the API's DOC to know about his parameters.
 
 ## **Requirements**
 
@@ -91,3 +89,13 @@ On the user page, there's the possibility to log out and see all the personal ra
 ### **"Mes évaluations" page**
 
 List of all the ratings create by the logged user. Possibility to delete it or modify it.
+
+
+
+## Conclusion
+
+Thanks for your interest if you've read this far, we hope you haven't made you cry with our code 🙃
+
+
+
+ Made with ❤️ and 🤯 by Spotless group
