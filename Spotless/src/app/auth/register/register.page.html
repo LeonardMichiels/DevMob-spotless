@@ -1,23 +1,31 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-button color="light" (click)="dismissRegister()">Close</ion-button>
+
+  <ion-toolbar>
+    <ion-button routerLink="/home">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-button>
     <ion-title>Register</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content padding>
-  <form #form="ngForm" (ngSubmit)="register(form)" method="post">
-    <ion-item>
-        <ion-label position="floating">Username</ion-label>
-        <ion-input ngModel name="username"></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" ngModel name="password"></ion-input>
-    </ion-item>
-  
-    <ion-button type="submit" expand="block" color="danger">Register</ion-button>
-  </form>
-  <p text-center>Already have a account?</p>
-<ion-button expand="block" routerLink="/login" >Login</ion-button>
-</ion-content> 
+
+<ion-content>
+
+  <ion-content padding>
+    <form #form="ngForm" (ngSubmit)="register(values)" method="post">
+      <ion-item>
+          <ion-label position="floating">Username</ion-label>
+          <ion-input [(ngModel)]="username" name="username"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+      </ion-item>
+    
+      <ion-button type="submit" expand="full" color="danger">Register</ion-button>
+    </form>
+    <p text-center>Already have a account?</p>
+    <ion-button expand="full" color="primary" routerLink="/login">Login</ion-button>
+  </ion-content>
+
+</ion-content>
