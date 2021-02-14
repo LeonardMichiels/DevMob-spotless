@@ -34,8 +34,8 @@ const routes: Routes = [
   },
 
   {
-    path: 'maps',
-    loadChildren: () => import('./maps/maps.module').then( m => m.MapsPageModule)
+    path: 'carte',
+    loadChildren: () => import('./layout/carte/carte.module').then( m => m.CartePageModule)
   }
 
 ];
