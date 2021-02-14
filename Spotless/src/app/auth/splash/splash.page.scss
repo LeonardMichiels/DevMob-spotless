@@ -1,9 +1,32 @@
 ion-content{
-    --background:blue;
+    background-color: #2699FB;
+}
+
+body{
+    background:#2699FB ;
+}
+
+.container{
+    height: 200px;
+    margin-top: 60%;
+}
+#spotless{
+    fill : #fff;
+    font-size: 50px;
+    font-family : Inter-Bold, Inter;
+    font-weight : 700;
+}
+
+#slogan{
+fill : #fff;
+font-size : 14px;
+font-family : Inter;
+font-weight : 400;
 }
 
 @-webkit-keyframes rotate-center{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotate-center{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}
 
-.container{
-    -webkit-animation:rotate-center .8s both;animation:rotate-center .8s both
+#logo{
+    -webkit-animation: rotate-center 1.5s ease-in-out 0.5s both;
+	        animation: rotate-center 1.5s ease-in-out 0.5s both;
 }
